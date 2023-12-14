@@ -1,0 +1,3 @@
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E rm -f CMakeFiles\work3.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\work3.dir/objects.a @CMakeFiles\work3.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\work3.dir/objects.a -Wl,--no-whole-archive -o work3.exe -Wl,--out-implib,libwork3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\work3.dir\linkLibs.rsp

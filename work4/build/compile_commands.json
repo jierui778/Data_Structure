@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/JIERUI/Desktop/class/Data_Structure/work4/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\work4.dir\\main.cpp.obj -c C:\\Users\\JIERUI\\Desktop\\class\\Data_Structure\\work4\\main.cpp",
+  "file": "C:/Users/JIERUI/Desktop/class/Data_Structure/work4/main.cpp",
+  "output": "CMakeFiles/work4.dir/main.cpp.obj"
+}
+]
