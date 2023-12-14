@@ -849,8 +849,8 @@ int main()
 - 得到并输出该二叉树的：前序遍历、中序遍历、后序
 遍历的结点序列。
 - 在该二叉树中查找值分别为83、65的结点，若存在
-相应的结点，则输出“<font color=yellow>There is a node whose value is..</font>”，
-若不存在相应的结点，则输出“<font color=yellow>There is not a node whose
+相应的结点，则输出“<font color=red>There is a node whose value is..</font>”，
+若不存在相应的结点，则输出“<font color=red>There is not a node whose
 value is.</font>”。
 
 ### 实验思路
