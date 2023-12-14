@@ -1,6 +1,7 @@
 # Data_Structure
 
 # 算法与数据结构实验报告
+
 ## 实验1:单链表的建立
 
 ### 要求
@@ -152,6 +153,7 @@ int main()
 3. 将新节点的next指针指向前一个节点的next指针所指向的节点，然后将前一个节点的next指针指向新节点;<br />
 
 具体插入操作如下：<br />
+
 1. 在表头插入元素:
     - 检查链表是否为空,如果为空直接返回。
     - 创建一个新节点，并将要插入的值赋给新节点的数据域。
@@ -364,6 +366,7 @@ int main()
 ### 实验思路
 
 与单链表的插入思路类似,单链表的别除思路如下：<br />
+
 1. 删除头节点：
     - 检查链表是否为空，如果为空则直接返回。
     - 保存头节点的地址到一个临时指针变量。
@@ -387,7 +390,9 @@ int main()
         - 遍历链表，直到找到要删除的元素或者到达链表末尾。
         - 如果找到要删除的元素,将前驱节点的next指针指向当前节点的后继节点。
         - 释放临时指针变量所指向的当前节点的内存。
+
 ### 代码块
+
 ```c
 #include <iostream>
 // 单链表的节点结构体,即一个节点包含数据和指向下一个节点的指针
@@ -575,30 +580,37 @@ int main()
     return 0;
 }
 ```
+
 ### 实验输出结果
+
 ![RESULT](./work3/result3.png)
-## 实验4:实验四：单链表的查找:
-### 要求:
+
+## 实验4:实验四：单链表的查找
+
+### 要求
+
 编写一个主程序和两个函数，实现如下功能：
+
 - 建立一个具有如下七个元素(80,55,61,51,55,89,
 71)的单链表。
 - 编写函数分别实现如下的功能。
-    - 编写一个函数实现：从单链表中查找出所有元素的
+  - 编写一个函数实现：从单链表中查找出所有元素的
 最大值，该值由函数返回，若单链表为空，则显示出错信息并
 亭止运行。
-    - 编写一个函数实现：统计出单链表中结点的值等于
+  - 编写一个函数实现：统计出单链表中结点的值等于
 给定值55的结点个数。
 - 对在(1)中所建立的单链表，调用(a)和(b)的这两
 个函数，来进行处理。
-### 实验思路:
+
+### 实验思路
+
 - 创建一个单链表，并将给定的七个元素(80,55,61,51,55,89,71)插入到链表中。
 - 编写一个函数来查找链表中的最大值:如果链表为空，则直接显示错误信息并停止运行。定义一个临时变量初始化为头元素。遍历链表中的每个节点，将节点的值与当前最大值进行比较，如果节点的值大于当前最大值，则更新最大值。最后返回最大值。如果链表为空，则显示错误信息并停止运行。
 - 编写一个函数来统计链表中值等于给定值55的节点个数:遍历链表中的每个节点，如果节点的值等于给定值，则计数器加1。最后返回计数器的值。
 - 在主程序中，调用上述两个函数来处理创建的链表:首先调用查找最大值的函数，并将结果打印出来。然后调用统计节点个数的函数，并将结果打印出来。
 
-
-
 ### 代码块
+
 ```c
 #include <iostream>
 // 单链表的节点结构体,即一个节点包含数据和指向下一个节点的指针
@@ -755,7 +767,7 @@ int findMaxValue(Node *head)
 {
     if (head == nullptr) // 如果为空链表，显示出错信息并停止运行
     {
-        printf("Error: 链表为空\n");
+        printf("Error: The linked list is empty\n");
         exit(1);
     }
 
@@ -819,18 +831,21 @@ int main()
     return 0;
 }
 ```
-### 实验输出结果:
+
+### 实验输出结果
+
 ![RESULT](./work4/result4.png)
-## 实验5:树的处理和操作:
 
-### 要求:
+## 实验5:树的处理和操作
 
+### 要求
 
 一个树的结构如下:
 <div align="center"> <img src="./work5/tree.png" width = 250 height = 200 /></div>
 
 首先建立八个对应的结点，然后建立该二叉树的链接
 存储结构。
+
 - 得到并输出该二叉树的：前序遍历、中序遍历、后序
 遍历的结点序列。
 - 在该二叉树中查找值分别为83、65的结点，若存在
@@ -838,7 +853,8 @@ int main()
 若不存在相应的结点，则输出“<font color=yellow>There is not a node whose
 value is.</font>”。
 
-### 实验思路:
+### 实验思路
+
 - 建立八个对应的结点，并建立二叉树的链接存储结构。可以使用指针来表示每个结点，并通过指针的方式将它们连接起来，形成二叉树的结构。
 
 - 前序遍历是先访问根结点，然后递归地遍历左子树和右子树。
@@ -846,3 +862,182 @@ value is.</font>”。
 - 后序遍历是先递归地遍历左子树和右子树，最后访问根结点。
 
 - 在二叉树中查找值分别为83和65的结点。可以使用递归或迭代的方式来实现查找算法,如果找到了相应的结点，则输出"There is a node whose value is..."；如果没有找到相应的结点，则输出"There is not a node whose value is..."。
+
+### 代码块
+
+```c
+#include <iostream>
+#include <vector>
+// 树的结构体
+struct TreeNode
+{
+    int data;        // 数据
+    TreeNode *left;  // 左子节点
+    TreeNode *right; // 右子节点
+};
+
+/**
+ * @brief 创建一个二叉树节点
+ * @param data 节点数据
+ * @return 新创建的节点指针
+ */
+TreeNode *createNode(int data)
+{
+    TreeNode *newNode = new TreeNode();
+    if (newNode)
+    {
+        newNode->data = data;
+        newNode->left = newNode->right = nullptr;
+    }
+    return newNode;
+}
+
+/**
+ * @brief 创建节点之间的链接
+ * @param parent 父节点
+ * @param leftChild 左子节点
+ * @param rightChild 右子节点
+ */
+void createLink(TreeNode *parent, TreeNode *leftChild, TreeNode *rightChild)
+{
+    parent->left = leftChild;
+    parent->right = rightChild;
+}
+
+/**
+ * @brief 前序遍历二叉树
+ * @param root 根节点
+ * @param result 存储遍历结果的向量
+ */
+void preorderTraversal(TreeNode *root, std::vector<int> &result)
+{
+    if (root)
+    {
+        result.push_back(root->data);
+        preorderTraversal(root->left, result);
+        preorderTraversal(root->right, result);
+    }
+}
+
+/**
+ * @brief 中序遍历二叉树
+ * @param root 根节点
+ * @param result 存储遍历结果的向量
+ */
+void inorderTraversal(TreeNode *root, std::vector<int> &result)
+{
+    if (root)
+    {
+        inorderTraversal(root->left, result);
+        result.push_back(root->data);
+        inorderTraversal(root->right, result);
+    }
+}
+
+/**
+ * @brief 后序遍历二叉树
+ * @param root 根节点
+ * @param result 存储遍历结果的向量
+ */
+void postorderTraversal(TreeNode *root, std::vector<int> &result)
+{
+    if (root)
+    {
+        postorderTraversal(root->left, result);
+        postorderTraversal(root->right, result);
+        result.push_back(root->data);
+    }
+}
+int searchNode(TreeNode *root, int value)
+{
+    if (root == nullptr)
+    {
+        return false;
+    }
+    if (root->data == value)
+    {
+        return true;
+    }
+    bool leftResult = searchNode(root->left, value);
+    bool rightResult = searchNode(root->right, value);
+    return leftResult || rightResult;
+}
+
+int main()
+{
+    // 创建二叉树的结点数据及对应关系
+    TreeNode *root = createNode(89);
+    TreeNode *node2 = createNode(45);
+    TreeNode *node3 = createNode(97);
+    TreeNode *node4 = createNode(71);
+    TreeNode *node5 = createNode(60);
+    TreeNode *node6 = createNode(75);
+    TreeNode *node7 = createNode(47);
+    TreeNode *node8 = createNode(83);
+
+    createLink(root, node2, node3);
+    createLink(node2, node4, node5);
+    createLink(node3, nullptr, node6);
+    createLink(node5, node7, node8);
+
+    // 前序遍历
+    std::vector<int> preorderResult;
+    preorderTraversal(root, preorderResult);
+    std::cout << "前序遍历结果：";
+    for (int num : preorderResult)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+
+
+    // 中序遍历
+    std::vector<int> inorderResult;
+    inorderTraversal(root, inorderResult);
+    std::cout << "中序遍历结果：";
+    for (int num : inorderResult)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+
+    // 后序遍历
+    std::vector<int> postorderResult;
+    postorderTraversal(root, postorderResult);
+    std::cout << "后序遍历结果：";
+    for (int num : postorderResult)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    int value1 = 83;
+    int value2 = 65;
+
+    if (searchNode(root, value1))
+    {
+        std::cout << "There is a node whose value is " << value1 << std::endl;
+    }
+    else
+    {
+        std::cout << "There is not a node whose value is " << value1 << std::endl;
+    }
+
+    if (searchNode(root, value2))
+    {
+        std::cout << "There is a node whose value is " << value2 << std::endl;
+    }
+    else
+    {
+        std::cout << "There is not a node whose value is " << value2 << std::endl;
+    }
+
+    return 0;
+}
+```
+
+### 实验输出结果
+
+![RESULT](./work5/result5.png)

@@ -80,6 +80,20 @@ void postorderTraversal(TreeNode *root, std::vector<int> &result)
         result.push_back(root->data);
     }
 }
+int searchNode(TreeNode *root, int value)
+{
+    if (root == nullptr)
+    {
+        return false;
+    }
+    if (root->data == value)
+    {
+        return true;
+    }
+    bool leftResult = searchNode(root->left, value);
+    bool rightResult = searchNode(root->right, value);
+    return leftResult || rightResult;
+}
 
 int main()
 {
@@ -131,5 +145,28 @@ int main()
     }
     std::cout << std::endl;
 
+    int value1 = 83;
+    int value2 = 65;
+
+    if (searchNode(root, value1))
+    {
+        std::cout << "There is a node whose value is " << value1 << std::endl;
+    }
+    else
+    {
+        std::cout << "There is not a node whose value is " << value1 << std::endl;
+    }
+
+    if (searchNode(root, value2))
+    {
+        std::cout << "There is a node whose value is " << value2 << std::endl;
+    }
+    else
+    {
+        std::cout << "There is not a node whose value is " << value2 << std::endl;
+    }
+
     return 0;
 }
+
+

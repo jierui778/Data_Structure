@@ -153,7 +153,7 @@ int findMaxValue(Node *head)
 {
     if (head == nullptr) // 如果为空链表，显示出错信息并停止运行
     {
-        printf("Error: 链表为空\n");
+        printf("Error: The linked list is empty\n");
         exit(1);
     }
 
